@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .register{
+    margin-right: 80px;
+    margin-left: 60px;
+  }
+ 
+ .welcome-text{
+  margin-right: 50%;
+ }
