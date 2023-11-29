@@ -19,6 +19,7 @@
 
       <a 
       *ngIf="isLoggedIn && user"
+      routerLink="/admin/profile"
       mat-icon-button class="welcome-text" aria-label="Example icon-button with heart icon">
        Welcome {{login.getUser().firstname}}
       </a>

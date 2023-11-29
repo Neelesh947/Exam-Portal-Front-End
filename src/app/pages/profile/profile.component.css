@@ -1,0 +1,37 @@
+.heading{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.image{
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid #7340ff;
+    border-radius: 50%;
+}
+
+.name{
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+.table{
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    font-size: large;
+    border-collapse: collapse;
+}
+
+.table tr td{
+    padding: 15px 10px;
+    border: 0.5px solid #e2e2e2;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.button button{
+    margin: 0 10px;
+}

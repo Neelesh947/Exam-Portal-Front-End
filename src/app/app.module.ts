@@ -21,6 +21,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProvider } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,9 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     HomeComponent,
     DashboardComponent,
     UserdashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +53,7 @@ import { UserdashboardComponent } from './pages/user/userdashboard/userdashboard
     MatCardModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
