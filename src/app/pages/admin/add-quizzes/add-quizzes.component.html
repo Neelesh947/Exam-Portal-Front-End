@@ -4,10 +4,11 @@
         <div class="bootstrap-wrapper">
             <div class="row">
                 <div class="col-md-8 offset-2">
-                    <form>
+                    <form (ngSubmit)="addQuiz()">
                         <mat-form-field appearance="fill" class="width100" >
                             <mat-label>Enter Title</mat-label>
-                            <input matInput 
+                            <input matInput
+                            [(ngModel)]="this.quizData.title" 
                             name="title"
                             placeholder="Enter here">
                         </mat-form-field>
@@ -15,6 +16,7 @@
                             <mat-label>Enter Description</mat-label>
                             <textarea name="description"
                                 matInput
+                                [(ngModel)]="this.quizData.description" 
                                 placeholder="Enter here"
                                 rows="3"></textarea>
                         </mat-form-field>
@@ -22,6 +24,7 @@
                         <mat-form-field appearance="fill" class="marks">
                             <mat-label>Enter Maximum Marks</mat-label>
                             <input matInput 
+                            [(ngModel)]="this.quizData.maxMarks" 
                             name="maxMarks"
                             placeholder="Enter here">
                         </mat-form-field>
@@ -29,15 +32,16 @@
                         <mat-form-field appearance="fill" class="questions">
                             <mat-label>Enter Number Of Questions</mat-label>
                             <input matInput 
+                            [(ngModel)]="this.quizData.numberOfQuestions" 
                             name="numberofquestions"
                             placeholder="Enter here">
                         </mat-form-field>
 
                         <!--------------Active Fields-------------->
                         <mat-slide-toggle class="slider"
-                            [color]="color"
-                            [checked]="checked"
-                            [disabled]="disabled">
+                        name="active"
+                        [(ngModel)]="this.quizData.active" 
+                            [color]="color">
                             Publish Quiz Status
                         </mat-slide-toggle>
 
@@ -46,7 +50,7 @@
 
                         <mat-form-field appearance="fill" class="category">
                             <mat-label>Category</mat-label>
-                            <mat-select name="category">
+                            <mat-select name="category" [(ngModel)]="this.quizData.category.cid" >
                                <mat-option *ngFor="let c of categories" [value]="c.cid">
                                 {{c.title}}
                                </mat-option>
