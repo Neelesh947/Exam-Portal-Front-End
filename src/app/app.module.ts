@@ -28,6 +28,8 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
 import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
+import { AddQuizzesComponent } from './pages/admin/add-quizzes/add-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import {MatDividerModule} from '@angular/material/divider';
     WelcomeComponent,
     ViewCategoriesComponent,
     AddCategoriesComponent,
+    ViewQuizzesComponent,
+    AddQuizzesComponent,
   ],
   imports: [
     BrowserModule,
