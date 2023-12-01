@@ -72,6 +72,11 @@ export class AddQuizzesComponent implements OnInit {
       }
 
       // make validations in category select so that it must no be empty
+      if (this.quizData.category == null) {
+        this.snack.open("Category Required !!", 'ok', { duration: 3000 });
+        return;
+      }
+      
 
       // call server to add quizes
       this.quiz1.addQuiz(this.quizData).subscribe((data:any)=>
