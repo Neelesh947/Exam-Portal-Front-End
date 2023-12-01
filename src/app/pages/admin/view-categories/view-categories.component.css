@@ -1,0 +1,26 @@
+.heading{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+
+.list-item-content{
+    display: flex;
+    align-items: flex-start;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+
+.title{
+    font-weight: bold;
+}
+
+.description{
+    margin-left: 2%;
+}
+
+.button{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}  

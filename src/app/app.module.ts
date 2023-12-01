@@ -25,6 +25,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import {MatListModule} from '@angular/material/list';
 import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoriesComponent } from './pages/admin/add-categories/add-categories.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,8 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     ProfileComponent,
     SidebarComponent,
     WelcomeComponent,
+    ViewCategoriesComponent,
+    AddCategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,7 @@ import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatDividerModule,
   ],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent]
