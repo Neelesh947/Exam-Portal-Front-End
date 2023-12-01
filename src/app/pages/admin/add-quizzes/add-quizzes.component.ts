@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-add-quizzes',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AddQuizzesComponent {
 
+
+  color: ThemePalette = 'primary';
+  checked = false;
+  disabled = false;
+
+  categories=[
+    {
+      cid:23,
+      title: 'programming'
+    },
+    {
+      cid:25,
+      title: 'maths'
+    }
+  ]
 }

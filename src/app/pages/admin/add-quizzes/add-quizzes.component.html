@@ -1,1 +1,64 @@
-<p>add-quizzes works!</p>
+<mat-card>
+    <h1 class="heading">Add New Quiz</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="row">
+                <div class="col-md-8 offset-2">
+                    <form>
+                        <mat-form-field appearance="fill" class="width100" >
+                            <mat-label>Enter Title</mat-label>
+                            <input matInput 
+                            name="title"
+                            placeholder="Enter here">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="width100" >
+                            <mat-label>Enter Description</mat-label>
+                            <textarea name="description"
+                                matInput
+                                placeholder="Enter here"
+                                rows="3"></textarea>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="marks">
+                            <mat-label>Enter Maximum Marks</mat-label>
+                            <input matInput 
+                            name="maxMarks"
+                            placeholder="Enter here">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" class="questions">
+                            <mat-label>Enter Number Of Questions</mat-label>
+                            <input matInput 
+                            name="numberofquestions"
+                            placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--------------Active Fields-------------->
+                        <mat-slide-toggle class="slider"
+                            [color]="color"
+                            [checked]="checked"
+                            [disabled]="disabled">
+                            Publish Quiz Status
+                        </mat-slide-toggle>
+
+                        <!--------------Select Categories---------------------------->
+                        <br>
+
+                        <mat-form-field appearance="fill" class="category">
+                            <mat-label>Category</mat-label>
+                            <mat-select name="category">
+                               <mat-option *ngFor="let c of categories" [value]="c.cid">
+                                {{c.title}}
+                               </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <div class="container text-center ">
+                            <button mat-raised-button color="primary">Add Quiz</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

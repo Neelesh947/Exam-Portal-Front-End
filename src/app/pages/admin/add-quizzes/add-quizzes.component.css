@@ -1,0 +1,27 @@
+.heading{
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.width100{
+    width: 100%;
+}
+
+.marks{
+    width: 48%;
+    margin-right: 2%;
+}
+
+.questions{
+    width: 48%;
+    margin-left: 2%;
+}
+
+.slider{
+    margin-top: 2%;
+}
+
+.category{
+    margin-top: 2%;
+    width: 100%;
+}
