@@ -20,4 +20,10 @@ export class QuizService {
   {
     return this._http.post(`${baseurl}/quiz/`,quiz);
   }
+
+  //delete quiz
+  public deleteQuiz(qid:any)
+  {
+    return this._http.delete(`${baseurl}/quiz/${qid}`)
+  }
 }
