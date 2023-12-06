@@ -9,7 +9,9 @@
         <p>{{q.description}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary">Questions</button>
+        <button mat-flat-button 
+        [routerLink]="'/admin/view-questions/'+q.qid + '/'+ q.title"
+        color="primary">Questions</button>
         <button mat-stroked-button color="primary" class="button">Max Marks: {{q.maxMarks}}</button>
         <button mat-stroked-button color="primary" class="button">Display Questions: {{q.numberOfQuestions}}</button>
         <button mat-stroked-button color="primary" class="button">Active: {{q.active}}</button>
