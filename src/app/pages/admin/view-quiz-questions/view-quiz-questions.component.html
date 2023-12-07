@@ -31,6 +31,15 @@
                         <mat-divider></mat-divider>
                         <p><b>Correct Answer :</b>{{q.answer}}</p>
                     </div>
+                    
+                    <mat-card-actions class="button">
+                        <button mat-raised-button                         
+                        color="primary"> Update </button>
+                        <button mat-raised-button
+                         (click)="deleteQuestion(q.quesid)"
+                         color="primary"class="button"> Delete </button>
+                    </mat-card-actions>
+                    
                 </mat-card-content>
             </mat-card>
         </div>
