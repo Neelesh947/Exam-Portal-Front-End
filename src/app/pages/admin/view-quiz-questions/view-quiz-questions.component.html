@@ -2,6 +2,9 @@
 <div class="bootstrap-wrapper">
     <div class="row">
         <div class="col-md-12">
+            <div class="container text-center margin-10">
+                <button [routerLink]="'/admin/add-questions/'+qid+'/'+qtitle" mat-raised-button color="primary">Add new Questions</button>
+            </div>
             <mat-card *ngFor="let q of questions; let i=index" class="mat-questions">
                 <mat-card-content>
                     <p>
@@ -30,10 +33,6 @@
                     </div>
                 </mat-card-content>
             </mat-card>
-
-            <div class="container text-center margin-10">
-                <button routerLink="" mat-raised-button color="primary">Add new Questions</button>
-            </div>
         </div>
     </div>
 </div>
