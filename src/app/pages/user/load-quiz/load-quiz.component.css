@@ -1,0 +1,33 @@
+.top{
+    margin-top: 20px;
+}
+.bottom{
+    margin-bottom: 20px;
+}
+
+.truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.example-header-image {
+    background-image: url('../../../../assets/quizzes/quiz.png');
+    background-size: cover;
+  }
+
+.left{
+    margin-left: 2%;
+}
+
+.right{
+    margin-right: 2%;
+}
+
+.mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
