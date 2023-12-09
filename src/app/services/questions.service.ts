@@ -27,4 +27,15 @@ export class QuestionsService {
   {
     return this._http.delete(`${baseurl}/question/${quesid}`)
   }
+
+  //get single question
+  public getSingleQuestion(questId:any)
+  {
+    return this._http.get(`${baseurl}/question/${questId}`)
+  }
+
+  //update questions
+  public updateQuestions(question:any){
+    return this._http.put(`${baseurl}/question/`,question)
+  }
 }

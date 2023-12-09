@@ -33,8 +33,10 @@
                     </div>
                     
                     <mat-card-actions class="button">
-                        <button mat-raised-button                         
+                        <button mat-raised-button
+                        [routerLink]="'/admin/updatequestion/'+q.quesid"                         
                         color="primary"> Update </button>
+                        
                         <button mat-raised-button
                          (click)="deleteQuestion(q.quesid)"
                          color="primary"class="button"> Delete </button>
