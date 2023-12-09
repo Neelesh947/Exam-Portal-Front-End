@@ -37,6 +37,7 @@ import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/vi
 import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions.component';
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SidebarComponent as UserSidebar } from './pages/user/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     ViewQuizQuestionsComponent,
     AddQuestionsComponent,
     UpdateQuestionComponent,
+    UserSidebar 
   ],
   imports: [
     BrowserModule,
