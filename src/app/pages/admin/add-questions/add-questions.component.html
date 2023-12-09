@@ -11,20 +11,29 @@
                     <form class="margin" (ngSubmit)="formSubmit()">
 
                         <!-----------------------Content Field-->
-                        <mat-form-field appearance="outline" class="width100">
+                        <!-- <mat-form-field appearance="outline" class="width100">
                             <mat-label>Write Questions </mat-label>
                             <textarea name="content"
                                 matInput
                                 placeholder="Enter here"
                                 [(ngModel)]="question.content"
                                 rows="3"></textarea>
-                        </mat-form-field>
+                        </mat-form-field> -->
+
+                        <!-- app.component.html -->
+
+                        <ckeditor [editor]="Editor" 
+                        data="<h1>Write your question here !!</h1>"
+                        name="content"
+                        [(ngModel)]="question.content"
+                        ></ckeditor>
+
                         <!-------options--------------------->
 
                         <div class="row">
                             <div class="col-md-6">
                                 <!---------option 1-->
-                                <mat-form-field class="width100" appearance="outline">
+                                <mat-form-field class="width100 option" appearance="outline">
                                     <mat-label>
                                         Enter Option 1
                                     </mat-label>
@@ -35,7 +44,7 @@
                             </div>
                             <div class="col-md-6">
                                 <!------------option 2-->
-                                <mat-form-field class="width100" appearance="outline">
+                                <mat-form-field class="width100 option" appearance="outline">
                                     <mat-label>
                                         Enter Option 2
                                     </mat-label>
