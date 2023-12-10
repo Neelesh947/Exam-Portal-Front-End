@@ -13,32 +13,51 @@ export class LoadQuizComponent implements OnInit{
 
   catId:any;
   quizzes:any;
+  cid:any;
 
   constructor(private _route:ActivatedRoute, private _cat:CategoriesService,
     private snack:MatSnackBar, private _quiz:QuizService){}
 
   ngOnInit(): void {
-    this.catId=this._route.snapshot.params['catId'];
 
-    if(this.catId==0)
-    {
-      console.log("Load all the quizes");
-      this._quiz.quizzes().subscribe((data:any)=>{
+    this._route.params.subscribe((_params:any)=>{
+      this.catId=_params['cid']      
+        if(this.catId==null)
+        {
+          console.log('Load all the quizzes');
+          this.loadAllQuizzes();
+        }else{
+          console.log('Load specific quiz');
+          this.loadSpecificQuizz();
+        }
+    })    
+  }
 
-        this.quizzes=data;
-        console.log(this.quizzes);     
+  loadAllQuizzes(){
+    this._quiz.quizzes().subscribe(
+      (data: any) => {
+        this.quizzes = data;
+        console.log(this.quizzes);
+      },
+      (error) => {
+        this.snack.open('Error in loading quizzes from the server', '', {
+          duration: 3000
+        });
+      }
+    );
+  }
 
-      },(error)=>{
-        this.snack.open("Error in loading category from the server","",{duration:3000})
-      })
-    }
-    else{
-      this._quiz.quizzes().subscribe((data:any)=>{
-        this.catId=data;
-        console.log(this.catId)
-      })
-      console.log("Load specific quiz");
-      
-    }
+  loadSpecificQuizz(){
+    this._quiz.getQuizCategory(this.catId).subscribe(
+      (data) => {
+        this.quizzes = data;
+        console.log(this.quizzes);
+      },
+      (error) => {
+        this.snack.open('Error in loading quizzes from the server', '', {
+          duration: 3000
+        });
+      }
+    );
   }
 }

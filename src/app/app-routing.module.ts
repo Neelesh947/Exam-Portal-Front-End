@@ -97,7 +97,11 @@ const routes: Routes = [
         component:ProfileComponent
       },
       {
-        path:'allquizzes/:catId',
+        path:'allquizzes',
+        component:LoadQuizComponent
+      },
+      {
+        path:'allquizzes/:cid',
         component:LoadQuizComponent
       }
     ]
