@@ -19,6 +19,7 @@ import { AddQuestionsComponent } from './pages/admin/add-questions/add-questions
 import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
 import { PreStartQuizComponetComponent } from './pages/user/pre-start-quiz-componet/pre-start-quiz-componet.component';
+import { StartComponent } from './pages/user/start/start.component';
 
 const routes: Routes = [
   {
@@ -108,8 +109,13 @@ const routes: Routes = [
       {
         path:'instructions/:qid',
         component:PreStartQuizComponetComponent
-      }
+      },
     ]
+  },
+  {
+    path:'start-quiz/:qid',
+    component:StartComponent,
+    canActivate:[NormalGuard],
   }
 ];
 

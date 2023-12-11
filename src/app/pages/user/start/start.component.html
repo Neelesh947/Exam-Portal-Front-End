@@ -1,0 +1,45 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <!--------instructions-->  
+                <h2>Instructions</h2>     
+             </div>
+    
+            <div class="col-md-8">
+                <!--------questions-->
+                <ng-container *ngIf="question">
+                    <h1>You are attempting {{question[0].quiz.title}} quiz </h1>
+                    <mat-card *ngFor="let q of question; let i=index" class="top">
+                        <mat-card-content>
+                            <p>Q {{i+1}}) <span [innerHTML]="q.content"></span></p>
+                            <mat-divider></mat-divider>
+                            <div class="row top">
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="q.option1" [name]="i">{{q.option1}}
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="q.option2" [name]="i">{{q.option2}}
+                                </div>
+                            </div>
+                            <div class="row top">
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="q.option3" [name]="i">{{q.option3}}
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="radio" [value]="q.option4" [name]="i">{{q.option4}}
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <div class="conatiner text-center top">
+                        <button mat-raised-button color="primary">Submit Quiz</button>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <!-----------progress bar-->
+            </div>
+        </div>
+    </div>
+</div>

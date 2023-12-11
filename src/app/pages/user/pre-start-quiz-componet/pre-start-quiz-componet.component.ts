@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
 import Swal from 'sweetalert2';
 
@@ -13,7 +13,7 @@ export class PreStartQuizComponetComponent implements OnInit{
   qid:any;
   quiz:any;
 
-  constructor(private _route:ActivatedRoute, private _quiz:QuizService){}
+  constructor(private _route:ActivatedRoute, private _quiz:QuizService, private _router:Router){}
 
   ngOnInit(): void {
     this.qid=this._route.snapshot.params['qid'];
@@ -26,5 +26,25 @@ export class PreStartQuizComponetComponent implements OnInit{
       console.log("error")
       Swal.fire('Error',"Error in Loading Quiz from the Server","error")
     })
+  }
+
+  startQuiz(){
+    Swal.fire({
+      title: "Do you want to start the quiz?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Start",
+      denyButtonText: `Not ready`,
+      icon:'info'
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        
+        this._router.navigate(['/start-quiz/'+this.qid])
+
+      } else if (result.isDenied) {
+        Swal.fire("Changes are not saved", "", "info");
+      }
+    });
   }
 }

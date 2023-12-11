@@ -36,6 +36,7 @@
                             </li>
                             <li>The time will be start when you clicked on the start test button</li>
                             <li>You can not resume this quiz, if interupts due to any reason.</li>
+                            <li>Once quiz will be start , You can not go back. You have to submit the quiz</li>
                             <li>click on the next button to move to the next button.</li>
                             <li>click on submit test button to submit the quiz</li>
                             <li>Reports of the test is automatically generated in the form of PDF copy</li>
@@ -43,7 +44,9 @@
                     </mat-card-content>
                     <mat-card-actions class="text-center">
                         <!-------------Submit button-->
-                        <button class="text-center" mat-raised-button color="primary">Start Quiz</button>
+                        <button class="text-center"
+                        (click)="startQuiz()"
+                         mat-raised-button color="primary">Start Quiz</button>
                     </mat-card-actions>
                 </mat-card>
             </div>

@@ -38,4 +38,10 @@ export class QuestionsService {
   public updateQuestions(question:any){
     return this._http.put(`${baseurl}/question/`,question)
   }
+
+  //get question of the quiz for the test
+  public getQuestionOfQuizForTest(qid:any)
+  {
+    return this._http.get(`${baseurl}/question/quiz/${qid}`)
+  }
 }
