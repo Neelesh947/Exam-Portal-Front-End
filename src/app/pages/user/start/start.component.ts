@@ -22,6 +22,8 @@ export class StartComponent implements OnInit{
 
   isSubmit=false;
 
+  timer:any;
+
 
 
   constructor(private locationSt:LocationStrategy, private _route:ActivatedRoute,
@@ -51,7 +53,11 @@ export class StartComponent implements OnInit{
       
       this.question.forEach((q:any) => {
         q['givenAnswer']='';
+        
+        this.timer=this.question.length * 2 * 60;
       });
+
+      this.startTimer();
 
     },(error)=>{
       console.log('error')
@@ -93,5 +99,19 @@ export class StartComponent implements OnInit{
         Swal.fire("Changes are not saved", "", "info");
       }
     });
+  }
+
+  startTimer(){
+    let t=window.setInterval(()=>{
+      //code ko call krega in ms
+      if(this.timer<=0)
+      {
+        this.submitQuiz();
+        clearInterval(t);
+      }
+      else{
+        this.timer--;
+      }
+    },1000)
   }
 }
