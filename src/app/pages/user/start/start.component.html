@@ -59,7 +59,7 @@
                                 Quiz will automatically submitted when time ends
                             </mat-card-subtitle>
                         </mat-card-header>
-                        <h1 class="text-center">{{timer}}</h1>
+                        <h1 class="text-center">{{getFormattedTime()}}</h1>
                         <mat-spinner style="margin:auto" color="primary" 
                         mode="determinate" [value]="(timer/(this.question.length * 2 * 60))*100"></mat-spinner>
                     </mat-card-content>

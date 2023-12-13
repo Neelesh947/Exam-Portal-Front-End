@@ -75,22 +75,8 @@ export class StartComponent implements OnInit{
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        
-        this.isSubmit=true;
-        //calculate marks
-
-        this.question.forEach((q:any)=>{
-          if(q.givenAnswer==q.answer)
-          {
-            this.correctAnswer++;
-            let marksSingle=this.question[0].quiz.maxMarks/this.question.length
-            this.marksGot+=marksSingle;
-          }
-          if(q.givenAnswer.trim()!='')
-          {
-            this.attempt++;
-          }
-        })
+       
+        this.quizEvaluation();
         // console.log("correct "+this.correctAnswer)
         //   console.log("marks"+ this.marksGot)
         //   console.log("attempt"+ this.attempt)
@@ -106,12 +92,38 @@ export class StartComponent implements OnInit{
       //code ko call krega in ms
       if(this.timer<=0)
       {
-        this.submitQuiz();
+        this.quizEvaluation();
         clearInterval(t);
       }
       else{
         this.timer--;
       }
     },1000)
+  }
+
+  
+  getFormattedTime(){
+    let mm=Math.floor(this.timer/60)
+    let ss=this.timer-mm*60;
+    return `${mm} min : ${ss} sec`
+  }
+
+  quizEvaluation(){
+    this.isSubmit=true;
+    //calculate marks
+
+    this.question.forEach((q:any)=>{
+      if(q.givenAnswer==q.answer)
+      {
+        this.correctAnswer++;
+        let marksSingle=this.question[0].quiz.maxMarks/this.question.length
+        this.marksGot+=marksSingle;
+      }
+      if(q.givenAnswer.trim()!='')
+      {
+        this.attempt++;
+      }
+    })
+   
   }
 }
