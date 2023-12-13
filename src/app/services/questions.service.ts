@@ -44,4 +44,11 @@ export class QuestionsService {
   {
     return this._http.get(`${baseurl}/question/quiz/${qid}`)
   }
+
+
+  //Evaluate Quiz
+  public evaluateQuiz(questions:any)
+  {
+    return this._http.post(`${baseurl}/question/evaluate-quiz`,questions);
+  }
 }
